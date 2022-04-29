@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min.css">
+    <script src="../JS/jquery-3.6.0.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+       *[class*="col-"]{
+           padding: 0; 
+       }
+    </style>
+    <script>
+ $(document).ready(function(){
+           var i=1;
+           $("#btnDK").click(function(){
+            $("#myModal").modal();
+           })
+         
+                function kiemtra(){
+                    var tdn = document.getElementById("tendangnhap");
+                if(tdn.value==""){
+                 tdn.className="loi";        
+                loi += "Tên đăng nhập không được bỏ trống<br>";
+}
+                else if(tdn.value.length<=6){
+                tdn.className="loi";       
+                 loi += "Tên đăng nhập quá ngắn<br>";        
+}
+                    else if(tdn.value.length>10){
+             tdn.className="loi";       
+                loi += "Tên đăng nhập quá dài<br>";        
+}   
+                else tdn.className="txt";  
+                }
+
+           })
+         
+
+    </script>
+</head>
+<body>
+   <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+               <img src="../img/Header.PNG" alt="" width="100%">
+            </div>
+       </div>
+       <div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-xs-12">
+                    <nav class="navbar navbar-expand-sm  justify-content-center">
+                        <ul class="navbar nav">
+                            <li class="navbar-item"><a class="navbar-link" href="#" style="margin-right: 20px;" id="btn1">Đăng Nhập</a></li>
+                            <li class="navbar-item"><a class="navbar-link" href="#" id="btnDK">Đăng Kí</a>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="row" >
+          <div class="col-md-10 text-center">
+            <h1>DANH SÁCH ĐỘI TUYỂN VIỆT NAM</h1><br>
+                    
+          </div>
+
+        </div>
+       </div>
+          <div class="row">
+              <div class="col-md-12">
+                  <section>
+                      <table class="table table-striped" id="danhSach">
+                          <tr>
+                              <th>
+                                  <tr>
+                                      <td>STT</td>
+                                      <td>Họ Tên</td>
+                                      <td>Số áo</td>
+                                      <td>Câu lạc bộ  </td>
+                                      <td>Ngày tập trung</td>
+                                      <td>Số Điện thoại</td>
+                                      <td>Ảnh đại diện </td>
+                                  </tr>
+                              </th>
+                          </tr>
+                          <tbody>
+                              <tr>
+                                <td>1</td>
+                                <td>Nguyễn Công Phượng</td>
+                                <td>10</td>
+                                <td>Hoàng Anh Gia Lai 1</td>
+                                <td>22/12/2022</td>
+                                <td>0989-777-888</td>
+                                
+                                <td>Anh 1</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </section>
+              </div>
+          </div>
+          <footer>
+            <div class="col-xs-12">
+                <p style="text-align: center;">SVTH: 20069151  Lớp: DHKTPM16GTT</p>
+            </div>
+        </footer>
+        <div class="modal fade" role="dialog" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center">
+                        THÔNG TIN CÁ NHÂN 
+                    </div>
+                    <div class="modal-body">
+                        <form action="" method="get" class="form-horizontal">
+                            <div class="form-group">
+                                <label for="txtHoten" class="control-label col-xs-3">Họ Tên</label>
+                                <div class="col-xs-9">
+                                   <input type = "text" class = "form-control" value = "" id = "txtHoten" placeholder = "Nhập họ tên:Nguyễn Văn A" >
+                                    <span id = " tbtHoten "class =" text-danger "> * </span>
+                                </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="lblMaSV">Số Áo</label>
+                              <input type = "text" class = "form-control" value = "" id = "txtSCMND" placeholder = "Số áo đội tuyển" >
+                              <span id = " tbtSCMND "class =" text-danger "> * </span>
+                          </div>
+                          <div class="form-group">
+                            <label for="lblMaSV">Câu lạc bộ </label>
+                            <input type = "text" class = "form-control" value = "" id = "txtSCMND" placeholder = "Nhập câu lạc bộ của bạn " >
+                            <span id = " tbtQuequan "class =" text-danger "> * </span>
+                           </div>
+
+
+                          <div class="form-group">
+                            <label for="txtEmail" class="control-label col-xs-3">Ngày tập trung</label>
+                            <div class="col-xs-9">
+                                <input type = "date" class = "form-control" value = "" id = "txtHoten" placeholder = "Nhập email của bạn" >
+                                <span id = " tbtEmail "class =" text-danger "> * </span>
+                            </div>
+                            <label for="txtSdt" class="control-label col-xs-3">Số Điện Thoại</label>
+                            <div class="col-xs-9">
+                                <input type = "text" class = "form-control" value = "" id = "txtHoten" placeholder = "0xxx-xxx-xxx" >
+                                <span id = " tbtSdt "class =" text-danger "> * </span>
+                            </div>
+                          </div>
+                    
+                              <div class="form-gourp">
+                                <label for="txtAnh" class="control-label col-xs-3"> Ảnh đại diện </label>
+                                <div class = "col-md-9">
+                                    <input type = "file" class = "form-control" id = "txtAnh" accept = ". jpg, jpeg, .png"> 
+                                    <span id = "tbFile" class = "text-risk"> * </span > 
+                                   </div> 
+                              </div>
+                              
+                        </form>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type = "button" id = "btnSave" class = "btn btn-success btn-block">Lưu </button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div> 
+   
+</body>
+</html>
